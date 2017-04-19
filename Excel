@@ -1,0 +1,31 @@
+Sub insertImage()
+On Error GoTo son
+
+Dim sum, cel, n As Integer
+sum = 0
+cel = 1
+n = 3 
+
+Do While sum < n
+
+sum = sum + 1
+cel = cel + 1
+
+'Select the folder of pics
+'
+ActiveSheet.Pictures.Insert("C:\Users\myPc\Pictures\inventario\" & Range("G" & cel).Value).Select
+
+
+Selection.Top = Range("G" & cel).Top
+Selection.Left = Range("G" & cel).Left
+Selection.ShapeRange.LockAspectRatio = msoFalse
+Selection.ShapeRange.Height = Range("G" & cel).Height
+Selection.ShapeRange.Width = Range("G" & cel).Width
+
+son:
+
+
+Loop
+
+
+End Sub
